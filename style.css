@@ -1,0 +1,51 @@
+<style>
+  
+
+    /* ZMIENNE UI */
+    :root {
+      --primary-color: #006838;
+      --bg-color: #ffffff;
+      --panel-bg: #ffffff;
+    }
+
+    /* UKŁAD STRONY */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); margin: 0; padding: 0; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+    .main-layout { display: flex; flex-direction: row; background: var(--panel-bg); border-radius: 20px; box-shadow: 0 15px 40px rgba(224, 224, 224, 1); width: 95%; height: 90vh; max-width: 1600px; overflow: hidden; }
+    .bouquet-display { flex-grow: 1; background-color: var(--panel-bg); display: flex; justify-content: center; align-items: center; padding: 20px; position: relative; overflow: hidden; }
+    
+    /* Ustawienia SVG */
+    svg { width: 100%; height: 100%; max-height: 85vh; display: block; }
+
+    /* KLASY WIDOCZNOŚCI */
+    .hidden-flower { display: none !important; }
+    .show-flower { display: block !important; }
+
+    /* GIPSÓWKA ZAWSZE WIDOCZNA */
+    [id*="gips"], [id*="Gips"] { display: block !important; }
+
+    /* PANEL STEROWANIA */
+    .controls { width: 350px; min-width: 300px; background: #ffffff; border-left: 1px solid #f0f0f0; display: flex; flex-direction: column; overflow-y: auto; padding: 30px; box-sizing: border-box; }
+    h1 { color: var(--primary-color); margin-top: 0; font-size: 24px; text-align: center; margin-bottom: 20px; }
+    h3 { margin: 20px 0 10px 0; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px; border-bottom: 2px solid #DFF7EB; padding-bottom: 5px; }
+    .section { margin-bottom: 10px; }
+    .slots-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .control-group label { display: block; font-size: 11px; font-weight: bold; color: #555; margin-bottom: 4px; }
+    select, textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; background-color: #fff; cursor: pointer; box-sizing: border-box; font-family: inherit; }
+    select:hover, textarea:focus { border-color: var(--primary-color); outline: none; }
+    textarea { resize: vertical; margin-top: 5px; }
+    .color-palette { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 5px; min-height: 35px; }
+    .swatch { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #e0e0e0; cursor: pointer; transition: transform 0.2s; }
+    .swatch:hover { transform: scale(1.1); }
+    .swatch.active { border: 3px solid #333; transform: scale(1.15); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .swatch[style*="rgb(255, 255, 255)"], .swatch[style*="#ffffff"] { border: 1px solid #ccc; }
+    .checkbox-container { display: flex; align-items: center; margin-top: 12px; font-size: 15px; color: #333; cursor: pointer; user-select: none; font-weight: 700; padding: 5px 0; }
+    .checkbox-container input { margin-right: 10px; width: 20px; height: 20px; accent-color: var(--primary-color); cursor: pointer; }
+    .summary-box { margin-top: 20px; padding-top: 20px; border-top: 2px dashed #fce4ec; text-align: center; }
+    .price-display { font-size: 28px; color: var(--primary-color); font-weight: 800; margin-bottom: 10px; letter-spacing: 0.5px; }
+    button { cursor: pointer; border: none; border-radius: 8px; font-weight: 600; font-family: inherit; transition: all 0.2s; }
+    .btn-random { margin-top: 15px; width: 100%; padding: 10px; background-color: #f0f0f0; color: #333; border: 1px solid #ddd; }
+    .btn-random:hover { background-color: #e0e0e0; }
+    .btn-finish { width: 100%; padding: 18px; background-color: var(--primary-color); color: white; font-size: 18px; margin-top: 10px; box-shadow: 0 4px 10px rgba(224, 224, 224, 1); }
+    .btn-finish:hover { background-color: #DFF7EB ; color: #006838; transform: translateY(-2px); }
+    @media (max-width: 900px) { .main-layout { flex-direction: column; height: auto; width: 90%; margin: 20px 0; border-radius: 0; } body { height: auto; overflow-y: auto; } .bouquet-display { min-height: 400px; } .controls { width: 100%; border-left: none; border-top: 1px solid #f0f0f0; height: auto; overflow: visible; } }
+  </style>
